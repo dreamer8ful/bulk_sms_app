@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Neumorphic Colors -->
+    <color name="neu_background">#ECF0F3</color>
+    <color name="neu_light_shadow">#FFFFFF</color>
+    <color name="neu_dark_shadow">#D1D9E6</color>
+    <color name="neu_accent">#6750A4</color>
+
+    <!-- Dark Neumorphic Colors -->
+    <color name="neu_background_dark">#2E3239</color>
+    <color name="neu_light_shadow_dark">#393E46</color>
+    <color name="neu_dark_shadow_dark">#23262C</color>
+
     <!-- Light Theme Colors -->
     <color name="md_theme_light_primary">#6750A4</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

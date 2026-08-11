@@ -89,8 +89,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun detectSims() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1) return
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             return
         }
@@ -166,6 +164,15 @@ class MainActivity : AppCompatActivity() {
             }
             override fun afterTextChanged(s: Editable?) {}
         })
+
+        binding.prefixInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                viewModel.setPrefix(s?.toString() ?: "")
+                updateMessagePreview(binding.messageInput.text.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
     private fun observeViewModel() {
@@ -190,11 +197,9 @@ class MainActivity : AppCompatActivity() {
             binding.previewCard.visibility = View.GONE
         } else {
             binding.previewCard.visibility = View.VISIBLE
-            binding.messagePreview.text = getString(
-                R.string.preview_label,
-                getString(R.string.preview_default_name),
-                message
-            )
+            val prefix = viewModel.prefix.value ?: ""
+            val name = getString(R.string.preview_default_name)
+            binding.messagePreview.text = getString(R.string.preview_label, prefix, name, message)
         }
     }
 
@@ -363,7 +368,7 @@ class MainActivity : AppCompatActivity() {
             .asSequence()
             .map { it.trim() }
             .filter { it.isNotEmpty() }
-            .map { line ->
+            .mapNotNull { line ->
                 // Split by first comma or semicolon to separate Name from Number
                 val parts = line.split(CSV_REGEX, 2)
                 if (parts.size == 2) {
@@ -377,7 +382,6 @@ class MainActivity : AppCompatActivity() {
                     } else null
                 }
             }
-            .filterNotNull()
             .distinctBy { it.phone }
             .toList()
     }
@@ -435,8 +439,8 @@ class MainActivity : AppCompatActivity() {
                 if (viewModel.isSending.value != true) break
 
                 val personalizedMessage = if (!recipient.name.isNullOrEmpty()) {
-                    getString(R.string.preview_label, recipient.name, message)
-                        .replace("Preview: ", "")
+                    val prefix = viewModel.prefix.value ?: ""
+                    "$prefix ${recipient.name} $message".trim()
                 } else {
                     message
                 }
@@ -471,7 +475,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getSmsManager(): SmsManager {
         val subId = viewModel.selectedSubscriptionId.value
-        return if (subId != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+        return if (subId != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 getSystemService(SmsManager::class.java).createForSubscriptionId(subId)
             } else {
@@ -546,10 +550,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        else
-            PendingIntent.FLAG_UPDATE_CURRENT
+        val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             registerReceiver(sentReceiver, IntentFilter(sentAction), RECEIVER_NOT_EXPORTED)

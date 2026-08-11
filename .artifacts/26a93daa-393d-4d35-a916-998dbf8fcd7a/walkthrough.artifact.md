@@ -22,4 +22,4 @@ I have added automatic phone number formatting to ensure all imported or manuall
 ### Manual Verification Recommended
 1. **Import CSV**: Use a CSV file where numbers are missing the leading zero (e.g., `712345678`). Verify they appear as `0712345678` in the text field.
 2. **Select Contacts**: Pick a contact with a number saved without a leading zero. Verify it imports correctly.
-3. **Type Manually**: Type `712345678` into the text box and verify that the "Ndugu [Name]" personalization still works (if previously imported) and the message goes out correctly.
+3. **Type Manually**: Type `712345678` into the text box and verify that the "Dear [Name]" personalization still works (if previously imported) and the message goes out correctly.

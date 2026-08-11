@@ -23,6 +23,9 @@ class SmsViewModel : ViewModel() {
     private val _totalCount = MutableLiveData(0)
     val totalCount: LiveData<Int> = _totalCount
 
+    private val _prefix = MutableLiveData("Hello, Dear")
+    val prefix: LiveData<String> = _prefix
+
     private val _selectedSubscriptionId = MutableLiveData<Int?>(null)
     val selectedSubscriptionId: LiveData<Int?> = _selectedSubscriptionId
 
@@ -54,6 +57,10 @@ class SmsViewModel : ViewModel() {
 
     fun incrementDelivered() {
         _deliveredCount.value = (_deliveredCount.value ?: 0) + 1
+    }
+
+    fun setPrefix(prefix: String) {
+        _prefix.value = prefix
     }
 
     fun addRecipientNames(names: Map<String, String>) {

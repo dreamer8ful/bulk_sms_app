@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_background" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+    <!-- Inner Dark Shadow (Simulated with Stroke) -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="2dp"
+                android:color="@color/neu_dark_shadow" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+    <!-- Inner Light Shadow (Simulated with Stroke + Padding) -->
+    <item
+        android:left="2dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1dp"
+                android:color="@color/neu_light_shadow" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</layer-list>

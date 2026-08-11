@@ -8,14 +8,29 @@
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/app_name" />
+            android:layout_height="140dp"
+            android:minHeight="?attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/app_name"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                android:textStyle="bold" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -40,16 +55,38 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/prefix_label"
+                    app:boxBackgroundMode="none"
+                    app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/prefixInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_neu_inset"
+                        android:inputType="textCapWords"
+                        android:padding="12dp"
+                        android:text="Hello, Dear"
+                        android:textColor="?attr/colorOnSurface" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:hint="@string/message_label"
+                    app:boxBackgroundMode="none"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/messageInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_neu_inset"
                         android:gravity="top"
                         android:inputType="textMultiLine|textCapSentences"
                         android:minLines="3"
+                        android:padding="12dp"
                         android:textColor="?attr/colorOnSurface" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,10 +94,10 @@
                     android:id="@+id/previewCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
                     android:visibility="gone"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="8dp"
+                    android:background="@drawable/bg_neu_elevated"
+                    app:cardElevation="0dp"
                     app:strokeWidth="0dp">
 
                     <TextView
@@ -70,7 +107,7 @@
                         android:padding="12dp"
                         android:textAppearance="?attr/textAppearanceBodySmall"
                         android:textColor="?attr/colorOnSurfaceVariant"
-                        tools:text="Preview: Ndugu John Doe Hello..." />
+                        tools:text="Preview: Dear John Doe Hello..." />
                 </com.google.android.material.card.MaterialCardView>
 
                 <RelativeLayout
@@ -110,15 +147,19 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/numbers_hint">
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/numbers_hint"
+                    app:boxBackgroundMode="none">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/numbersInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_neu_inset"
                         android:gravity="top"
                         android:inputType="textMultiLine"
                         android:minLines="5"
+                        android:padding="12dp"
                         android:textColor="?attr/colorOnSurface" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,10 +223,9 @@
             android:id="@+id/bottomContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorSurface"
-            android:elevation="8dp"
+            android:background="@drawable/bg_neu_elevated"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -205,16 +245,23 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sendButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="64dp"
                 android:layout_marginTop="16dp"
+                android:backgroundTint="@android:color/transparent"
+                android:background="@drawable/bg_neu_button"
+                android:textColor="@color/neu_accent"
+                app:elevation="0dp"
                 android:text="@string/send_button" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancelButton"
-                style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@android:color/transparent"
+                android:background="@drawable/bg_neu_button"
+                android:textColor="@color/md_theme_light_error"
+                app:elevation="0dp"
                 android:text="@string/cancel_button"
                 android:visibility="gone" />
 
