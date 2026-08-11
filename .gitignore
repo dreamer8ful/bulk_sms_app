@@ -1,0 +1,65 @@
+# Gradle
+.gradle/
+build/
+*.gradle.bak
+
+# Local configuration file (sdk path, etc)
+local.properties
+gradle.properties
+
+# Build outputs
+*.apk
+*.aab
+*.hprof
+*.ap_
+
+# Keystore files
+*.keystore
+*.jks
+*.p12
+*.pfx
+
+# Log files
+*.log
+
+# IDE (Android Studio)
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibExplorer.xml
+*.iml
+*.iws
+*.ipr
+.DS_Store
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode
+
+# Android Studio captures folder
+captures/
+.externalNativeBuild
+
+# Kotlin
+out/
+.kotlin/
+kotlinc_classes/
+
+# Local environment
+.env
+.env.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Build artifacts
+app/build/outputs/mapping/
+app/build/intermediates/
+

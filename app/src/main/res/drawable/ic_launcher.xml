@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Deep Dark Background -->
+    <path
+        android:fillColor="#0D071B"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <!-- Stylized Outer Ring -->
+    <path
+        android:pathData="M54,54m-42,0a42,42 0,1 1,84 0a42,42 0,1 1,-84 0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#8B5CF6" />
+
+    <!-- Scaled Down Core Elements -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:translateX="4"
+        android:translateY="4">
+
+        <!-- Motion Lines -->
+        <path
+            android:pathData="M15,42L40,42"
+            android:strokeWidth="4"
+            android:strokeLineCap="round"
+            android:strokeColor="#A78BFA" />
+        <path
+            android:pathData="M12,50L35,50"
+            android:strokeWidth="4"
+            android:strokeLineCap="round"
+            android:strokeColor="#C4B5FD" />
+        <path
+            android:pathData="M15,58L40,58"
+            android:strokeWidth="4"
+            android:strokeLineCap="round"
+            android:strokeColor="#A78BFA" />
+        <path
+            android:pathData="M18,66L30,66"
+            android:strokeWidth="4"
+            android:strokeLineCap="round"
+            android:strokeColor="#8B5CF6" />
+
+        <!-- Main Chat Bubble -->
+        <path
+            android:fillColor="#F3E8FF"
+            android:pathData="M78,48C78,32.5 65.5,20 50,20C34.5,20 22,32.5 22,48C22,54.5 24.2,60.5 28,65.2L28,75L37.8,71.2C41.5,74.2 46.2,76 50,76C55,76 60.5,74.5 65,71.5" />
+
+        <!-- Three Dots -->
+        <path android:fillColor="#8B5CF6" android:pathData="M40,48m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+        <path android:fillColor="#8B5CF6" android:pathData="M52,48m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+        <path android:fillColor="#8B5CF6" android:pathData="M64,48m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+
+        <!-- Group Badge -->
+        <path
+            android:fillColor="#4C1D95"
+            android:strokeColor="#A78BFA"
+            android:strokeWidth="2"
+            android:pathData="M80,78m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0" />
+
+        <group android:translateX="80" android:translateY="78" android:scaleX="0.6" android:scaleY="0.6">
+            <path android:fillColor="#FFFFFF" android:pathData="M0,-8C2.2,-8 4,-5.8 4,-3.5C4,-1.2 2.2,1 0,1C-2.2,1 -4,-1.2 -4,-3.5C-4,-5.8 -2.2,-8 0,-8Z" />
+            <path android:fillColor="#FFFFFF" android:pathData="M0,3C4.4,3 8,4.8 8,7V10H-8V7C-8,4.8 -4.4,3 0,3Z" />
+            <path android:fillColor="#E9D5FF" android:pathData="M-10,-5C-8.4,-5 -7,-3.7 -7,-2C-7,-0.3 -8.4,1 -10,1C-11.6,1 -13,-0.3 -13,-2C-13,-3.7 -11.6,-5 -10,-5Z" />
+            <path android:fillColor="#E9D5FF" android:pathData="M-10,3C-13,3 -16,4.5 -16,6.5V9H-4V6.5C-4,4.5 -7,3 -10,3Z" />
+            <path android:fillColor="#E9D5FF" android:pathData="M10,-5C8.4,-5 7,-3.7 7,-2C7,-0.3 8.4,1 10,1C11.6,1 13,-0.3 13,-2C13,-3.7 11.6,-5 10,-5Z" />
+            <path android:fillColor="#E9D5FF" android:pathData="M10,3C7,3 4,4.5 4,6.5V9H16V6.5C16,4.5 13,3 10,3Z" />
+        </group>
+    </group>
+
+</vector>
