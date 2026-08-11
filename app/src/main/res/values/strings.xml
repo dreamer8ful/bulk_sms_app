@@ -5,7 +5,7 @@
     <string name="prefix_hint">e.g. Hello, Dear</string>
     <string name="message_hint">The text every recipient will receive</string>
     <string name="phone_numbers_label">Phone numbers</string>
-    <string name="numbers_hint">Type phone numbers here (one per line). Names from CSV/Contacts are handled automatically.</string>
+    <string name="numbers_hint">Type phone numbers here (one/line). Names from CSV/Contacts are handled automatically.</string>
     <string name="import_csv">CSV</string>
     <string name="select_contacts">Contacts</string>
     <string name="search_contacts_hint">Search contacts…</string>
@@ -20,7 +20,7 @@
     <string name="send_button">Send to all numbers</string>
     <string name="cancel_button">Cancel</string>
     <string name="preview_label">Preview: %1$s %2$s %3$s</string>
-    <string name="preview_default_name">[Jina].</string>
+    <string name="preview_default_name">[Name].</string>
     <string name="confirm_title">Confirm send</string>
     <string name="confirm_message">This will send an SMS to %1$d number(s). Continue?</string>
     <string name="permission_required">SMS permission is required to send messages.</string>
