@@ -56,8 +56,9 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:
 
 **Introsoft Support**
-Email: [support@introsoft.com]
+Email: [introsoft.media@gmail.com]
 Website: [https://www.introsoft.com]
 
-> [!NOTE]
-> This policy is specifically tailored for the local nature of the **Bulk SMS Sender** app. If you add cloud features or analytics in the future, this policy MUST be updated to reflect those changes.
+---
+
+© IntroSoft Media Solutions
